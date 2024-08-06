@@ -2,14 +2,14 @@
  * @param {number} num
  * @return {boolean}
  */
+
 var checkPerfectNumber = function(num) {
-    let count = 0;
+    if(num === 1) return false;
+    let sum = 1;
+    const sqrt = Math.floor(Math.sqrt(num));
 
-    for (let i = 1; i <= num / 2; i++) {
-        if (num % i === 0) {
-            count += i;
-        }
+     for(let i =2; i <= sqrt; i++) {
+        if(num % i === 0 ) sum = sum + i + num/i;
     }
-
-    return num === count;
+    return sum === num;
 };
